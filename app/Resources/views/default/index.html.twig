@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Empresas
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('assets/css/enteprise.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/select.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/modal.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div class="form" tabindex="-1">
+                    <div class="form-content">
+                        <div class="form-header">
+                                <div class="box-text">
+                                                    <h5 class="form-title">Lista de Empresas</h5>
+                                <h3 class="form-subtitle">Seleccione la empresa donde desea realizar sus transacciones.</h3>
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="customInputContainer">
+                            <div class="customInput">
+                                <div class="selectedData">Seleccione...</div>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                            <div class="options">
+                                <div class="searchInput">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" id="searchInput" placeholder="Buscar">
+                                </div>
+                                <ul></ul>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="form-footer">
+                        <button type="button" class="btn btn-primary" onclick="clickConfirm()">Continuar</button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+  <div class="flex align-center align-vert modal modal--align modal_dialog">
+    <div class="modal__container">
+        <p class="modal__header">Dialog</p>
+      <a class="modal__close modal__close--x" aria-hidden="true">✕</a>
+      <p class="message"></p>
+      <button type="button" class="btn btn-primary modal__close">Cerrar</button>
+    </div>
+  </div>
+ <div class="flex align-center align-vert modal modal--align modal_addCompanie">
+    <div class="modal__container">
+        <p class="modal__header">Dialog</p>
+      <a class="modal__close modal__close--x" aria-hidden="true">✕</a>
+      <div class="modal__content">
+            <div class="form-control">
+                <label for="code">Código:</label><br>
+                <input class="col-3" type="text" id="code" name="code" autofocus>      
+            </div>      
+            <div class="form-control">
+                <label for="name">Descripción:</label><br>
+                <input type="text" id="name" name="name">      
+            </div>    
+      </div>
+      <button type="button" class="btn btn-primary modal__close">Cerrar</button>
+    </div>
+  </div>  
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/enteprise.js') }}"></script>
+    <script src="{{ asset('assets/js/select.js') }}"></script>
+    <script src="{{ asset('assets/js/modal.js') }}"></script>
+{% endblock %}
